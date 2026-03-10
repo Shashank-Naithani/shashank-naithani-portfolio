@@ -54,7 +54,7 @@ const ProjectsPage = () => {
       id: 2,
       title: "DeptTrack",
       description:
-        "A full-stack task management platform enabling users to organize tasks, track progress, and manage workflows with a responsive React frontend and scalable Node.js REST API backend.",
+        "A role-based task management platform built with React, Redux Toolkit, and Firebase, enabling departments to assign tasks, track progress, and manage workflows with real-time updates and scalable Firestore data models.",
       image: deptTrackImage,
       technologies: [
         "React",

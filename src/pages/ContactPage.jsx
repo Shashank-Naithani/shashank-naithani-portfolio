@@ -45,6 +45,9 @@ const ContactPage = () => {
     // Reset form
     setFormData({ name: "", email: "", message: "" });
     // alert("Message sent successfully!");
+    alert(
+      "Unable to send message at the moment. Please use other contact methods.",
+    );
   };
 
   const contactInfo = [
