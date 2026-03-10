@@ -29,9 +29,9 @@ const EducationPage = () => {
     {
       id: 1,
       degree: "Master of Computer Applications (MCA)",
-      institution: "Guru Gobind Singh Indraprastha University",
+      institution: "Vivekananda Institute of Professional Studies, GGSIPU",
       location: "Delhi, India",
-      period: "2022 - 2024",
+      period: "2024 - 2026",
       score: "CGPA: 9.0/10",
       description:
         "Specialized in advanced software development, web technologies, and database management systems. Completed projects in full-stack development and contributed to research papers.",
@@ -46,9 +46,9 @@ const EducationPage = () => {
     {
       id: 2,
       degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Your University Name",
+      institution: "Sirifort Institute of Management Studies, GGSIPU",
       location: "Your City, India",
-      period: "2019 - 2022",
+      period: "2021 - 2024",
       score: "CGPA: 9.1/10",
       description:
         "Built a strong foundation in programming fundamentals, data structures, and computer networks. Actively participated in coding competitions and technical workshops.",

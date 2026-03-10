@@ -26,6 +26,23 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) return;
+
+    const navbarHeight = navHeight;
+    const targetPosition = targetElement.offsetTop - navbarHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  };
+
   // Personal traits (keeping these for visual interest)
   const traits = [
     { icon: "🎯", text: "Problem Solver" },
@@ -86,15 +103,16 @@ const About = () => {
 
                 <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                   <p>
-                    I'm Shashank Naithani, a Full Stack Web Developer
-                    specializing in the{" "}
+                    I'm Shashank Naithani, a Full Stack Developer specializing
+                    in the{" "}
                     <span className="text-foreground font-semibold">
                       MERN stack
                     </span>
-                    , with hands-on experience building scalable and secure web
-                    applications. I enjoy developing modern user interfaces and
-                    robust backend systems with a strong focus on performance,
-                    maintainability, and user experience.
+                    , with hands-on experience building scalable web
+                    applications and secure backend systems. I enjoy developing
+                    modern user interfaces and designing reliable APIs with a
+                    strong focus on performance, clean architecture, and user
+                    experience.
                   </p>
 
                   <p>
@@ -114,17 +132,19 @@ const About = () => {
                   <p>
                     My technical expertise includes{" "}
                     <span className="text-foreground font-semibold">
-                      React, Node.js, Express, MongoDB, and Redux
+                      React, Node.js, Express.js, MongoDB, and Redux Toolkit
                     </span>
-                    , along with designing RESTful APIs, authentication systems,
-                    and scalable application architectures.
+                    , along with building RESTful APIs, implementing secure
+                    authentication using JWT, and designing scalable backend
+                    architectures for modern web applications.
                   </p>
 
                   <p>
                     I am passionate about solving real-world problems through
                     software and continuously improving my skills by building
-                    production-ready applications and exploring modern
-                    development practices.
+                    production-ready applications, exploring modern frameworks,
+                    and following best practices in scalable full-stack
+                    development.
                   </p>
                 </div>
               </div>
@@ -147,9 +167,12 @@ const About = () => {
                 </svg>
 
                 <p className="text-lg italic text-foreground/80 mb-4">
-                  "Code is not just about making things work, it's about
+                  {/* "Code is not just about making things work, it's about
                   creating experiences that users love and solutions that
-                  scale."
+                  scale." */}
+                  "Great software is not just about writing code — it's about
+                  designing systems that are scalable, secure, and built for
+                  real users."
                 </p>
 
                 <div className="flex items-center gap-3">
@@ -203,6 +226,7 @@ const About = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   href="#projects"
+                  onClick={(e) => scrollToSection(e, "#projects")}
                   variant="primary"
                   size="md"
                   className="flex-1"
@@ -211,6 +235,7 @@ const About = () => {
                 </Button>
                 <Button
                   href="#contact"
+                  onClick={(e) => scrollToSection(e, "#contact")}
                   variant="outline"
                   size="md"
                   className="flex-1"

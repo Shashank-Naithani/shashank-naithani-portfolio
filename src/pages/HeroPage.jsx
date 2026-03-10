@@ -3,11 +3,34 @@ import React, { useEffect, useRef } from "react";
 import Button from "../components/ui/Button";
 import ProfileImage from "../assets/Shashank_Naithani.png";
 import { useAppContext } from "../context/AppContext";
+import reactImg from "../assets/hero-skills-icons/react.png";
+import mongoImg from "../assets/hero-skills-icons/mongo-db.png";
+import nodeImg from "../assets/hero-skills-icons/node.png";
+import jwtImg from "../assets/hero-skills-icons/jwt.png";
+import reduxImg from "../assets/hero-skills-icons/redux.png";
+import restapiImg from "../assets/hero-skills-icons/restapi.png";
 
 const HeroPage = () => {
   const { navHeight } = useAppContext();
   const textRef = useRef(null);
   const imageRef = useRef(null);
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) return;
+
+    const navbarHeight = navHeight;
+    const targetPosition = targetElement.offsetTop - navbarHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     // Intersection Observer for fade-in animations
@@ -30,12 +53,12 @@ const HeroPage = () => {
   }, []);
 
   const floatingSkills = [
-    { name: "React", icon: "⚛️", top: "-10%", right: "0%" },
-    { name: "Node.js", icon: "🚀", bottom: "10%", left: "-5%" },
-    { name: "MongoDB", icon: "🍃", top: "20%", right: "-8%" },
-    { name: "TypeScript", icon: "📘", bottom: "30%", left: "-10%" },
-    { name: "Next.js", icon: "▲", top: "40%", right: "-12%" },
-    { name: "Tailwind", icon: "🎨", bottom: "-5%", right: "15%" },
+    { name: "React", icon: reactImg, top: "-10%", right: "0%" },
+    { name: "Node.js", icon: nodeImg, bottom: "10%", left: "-5%" },
+    { name: "MongoDB", icon: mongoImg, top: "20%", right: "-8%" },
+    { name: "Redux", icon: reduxImg, bottom: "30%", left: "-10%" },
+    { name: "JWT Auth", icon: jwtImg, top: "40%", right: "-12%" },
+    { name: "REST APIs", icon: restapiImg, bottom: "-5%", right: "15%" },
   ];
 
   return (
@@ -70,7 +93,8 @@ const HeroPage = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-sm font-medium text-foreground">
-                Available for work
+                {/* Available for work */}
+                Open to Full Stack Opportunities
               </span>
             </div>
 
@@ -98,21 +122,23 @@ const HeroPage = () => {
                 Full Stack Developer
               </h2>
               <div className="flex items-center gap-3 mt-3 flex-wrap">
-                {["MERN Stack", "JavaScript", "Python"].map((tech, index) => (
-                  <React.Fragment key={tech}>
-                    <span className="text-foreground font-medium px-3 py-1 bg-secondary/50 rounded-full text-sm">
-                      {tech}
-                    </span>
-                    {index < 2 && (
-                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full"></span>
-                    )}
-                  </React.Fragment>
-                ))}
+                {["MERN Stack", "System Design", "Python"].map(
+                  (tech, index) => (
+                    <React.Fragment key={tech}>
+                      <span className="text-foreground font-medium px-3 py-1 bg-secondary/50 rounded-full text-sm">
+                        {tech}
+                      </span>
+                      {index < 2 && (
+                        <span className="w-1.5 h-1.5 bg-primary/40 rounded-full"></span>
+                      )}
+                    </React.Fragment>
+                  ),
+                )}
               </div>
             </div>
 
             {/* Description with improved typography */}
-            <p className="text-muted-foreground text-lg sm:text-xl mb-8 max-w-lg leading-relaxed">
+            {/* <p className="text-muted-foreground text-lg sm:text-xl mb-8 max-w-lg leading-relaxed">
               I craft robust and scalable web applications with{" "}
               <span className="text-foreground font-semibold">clean code</span>{" "}
               and{" "}
@@ -120,22 +146,41 @@ const HeroPage = () => {
                 exceptional user experiences
               </span>
               . Turning complex problems into elegant solutions.
+            </p> */}
+            <p className="text-muted-foreground text-lg sm:text-xl mb-8 max-w-lg leading-relaxed">
+              I build scalable web applications and{" "}
+              <span className="text-foreground font-semibold">
+                secure backend systems
+              </span>{" "}
+              using the{" "}
+              <span className="text-foreground font-semibold">MERN stack</span>,
+              designing{" "}
+              <span className="text-foreground font-semibold">robust APIs</span>{" "}
+              and{" "}
+              <span className="text-foreground font-semibold">
+                authentication systems
+              </span>{" "}
+              for reliable and high-performance applications.
             </p>
 
             {/* CTA Buttons with hover effects */}
             <div className="flex flex-wrap gap-4">
               <Button
                 href="#contact"
+                onClick={(e) => scrollToSection(e, "#contact")}
                 variant="primary"
                 size="lg"
                 className="group relative overflow-hidden"
               >
-                <span className="relative z-10">Contact Me</span>
+                <span className="relative z-10">
+                  {/* Contact Me */}
+                  Get In Touch
+                </span>
                 <span className="absolute inset-0 bg-linear-to-r from-primary to-primary/80 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </Button>
 
               <Button
-                href="/resume.pdf"
+                href="https://drive.google.com/uc?export=download&id=1i9XjFDYOWP12tSkS0XZfdmFqcmKUMbo1"
                 variant="outline"
                 size="lg"
                 className="group border-2 hover:border-primary/50 transition-all duration-300"
@@ -218,7 +263,14 @@ const HeroPage = () => {
                   }}
                 >
                   <div className="bg-background/80 backdrop-blur-md border border-border/50 px-4 py-2 rounded-full shadow-xl hover:shadow-primary/20 hover:border-primary/30 transition-all duration-300 hover:scale-110">
-                    <span className="mr-2">{skill.icon}</span>
+                    {/* <span className="mr-2">{skill.icon}</span> */}
+                    <span className="mr-2">
+                      <img
+                        className="w-5 h-5 inline"
+                        src={skill.icon}
+                        alt={skill.name}
+                      />
+                    </span>
                     <span className="text-sm font-medium text-foreground">
                       {skill.name}
                     </span>

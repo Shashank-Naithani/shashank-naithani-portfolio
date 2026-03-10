@@ -29,10 +29,10 @@ const ExperiencePage = () => {
   const experiences = [
     {
       id: 1,
-      title: "Full Stack Developer Intern",
-      company: "Tech Company Name",
-      location: "Remote / Delhi",
-      period: "June 2024 - Present",
+      title: "Frontend Developer Intern",
+      company: "Corizo",
+      location: "Remote / New Delhi",
+      period: "August, 2023 - October, 2023",
       description: [
         "Developed and maintained full-stack web applications using MERN stack, resulting in 30% improved performance",
         "Collaborated with cross-functional teams to design and implement RESTful APIs for seamless data integration",
@@ -43,10 +43,10 @@ const ExperiencePage = () => {
     },
     {
       id: 2,
-      title: "Frontend Developer Intern",
-      company: "Another Tech Company",
-      location: "Remote",
-      period: "Jan 2024 - May 2024",
+      title: "Full Stack Developer Intern",
+      company: "PairBytes Software",
+      location: "Remote / New Delhi",
+      period: "March, 2023 - August, 2023",
       description: [
         "Built reusable React components and implemented state management using Redux",
         "Optimized application performance through code splitting and lazy loading techniques",

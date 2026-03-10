@@ -30,12 +30,19 @@ const Skills = () => {
     {
       name: "Programming Languages",
       icon: "💻",
-      skills: ["JavaScript (ES6+)", "Python", "TypeScript"],
+      skills: ["JavaScript (ES6+)", "Python"],
     },
     {
       name: "Frontend",
       icon: "🎨",
-      skills: ["React.js", "Next.js", "Redux", "Tailwind CSS", "HTML5/CSS3"],
+      skills: [
+        "React.js",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Bootstrap",
+        "HTML",
+        "CSS",
+      ],
     },
     {
       name: "Backend",
@@ -44,20 +51,26 @@ const Skills = () => {
         "Node.js",
         "Express.js",
         "REST APIs",
-        "Authentication",
-        "WebSockets",
+        "Authentication & Authorization",
+        "JWT",
+        "Role-Based Access Control",
       ],
     },
     {
       name: "Database",
       icon: "🗄️",
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Redis"],
+      skills: ["MongoDB", "MySQL", "Firebase Firestore"],
     },
     {
-      name: "Tools & DevOps",
+      name: "Tools",
       icon: "🔧",
-      skills: ["Git & GitHub", "Docker", "AWS", "Postman", "Jest", "Figma"],
+      skills: ["Git & GitHub", "Postman", "VS Code"],
     },
+    // {
+    //   name: "Tools & DevOps",
+    //   icon: "🔧",
+    //   skills: ["Git & GitHub", "Docker", "AWS", "Postman", "Jest", "Figma"],
+    // },
   ];
 
   return (

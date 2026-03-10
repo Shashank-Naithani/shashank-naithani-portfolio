@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import Button from "../components/ui/Button";
 import { useAppContext } from "../context/AppContext";
+import deptTrackImage from "../assets/projects/dept-track.png";
+import secureAuthImage from "../assets/projects/secure-auth.png";
 
 const ProjectsPage = () => {
   const { navHeight } = useAppContext();
@@ -29,23 +31,43 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      title: "Project Alpha",
+      title: "Secure Auth",
       description:
-        "A full-stack task management application with real-time updates, team collaboration, and intuitive drag-and-drop interface built with the MERN stack.",
-      image: "/api/placeholder/400/200", // Replace with your actual project image
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Tailwind"],
-      liveLink: "https://project1.com",
-      githubLink: "https://github.com/shashank/project1",
+        "A production-ready MERN authentication system featuring JWT-based login, refresh token rotation, secure cookie handling, OTP verification, and Google OAuth for secure and scalable user access management.",
+      image: secureAuthImage,
+      technologies: [
+        "React",
+        "Redux Toolkit",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+      ],
+      liveLink: "",
+      githubLink: "",
+      githubLinkFrontend:
+        "https://github.com/Shashank-Naithani/secure-auth-frontend",
+      githubLinkBackend:
+        "https://github.com/Shashank-Naithani/secure-auth-backend",
     },
     {
       id: 2,
-      title: "Project Beta",
+      title: "DeptTrack",
       description:
-        "Modern e-commerce platform with advanced product filtering, secure Stripe payments, and complete cart management built with Next.js and TypeScript.",
-      image: "/api/placeholder/400/200", // Replace with your actual project image
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Redux"],
-      liveLink: "https://project2.com",
-      githubLink: "https://github.com/shashank/project2",
+        "A full-stack task management platform enabling users to organize tasks, track progress, and manage workflows with a responsive React frontend and scalable Node.js REST API backend.",
+      image: deptTrackImage,
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Tailwind",
+        "REST API",
+      ],
+      liveLink: "https://depttrack.vercel.app/",
+      githubLink: "https://github.com/Shashank-Naithani/depttrack",
+      githubLinkFrontend: "",
+      githubLinkBackend: "",
     },
   ];
 
@@ -109,7 +131,7 @@ const ProjectsPage = () => {
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  {/* <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
@@ -118,37 +140,83 @@ const ProjectsPage = () => {
                         {tech}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <Button
-                      href={project.liveLink}
-                      variant="primary"
-                      size="sm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Demo
-                    </Button>
-                    <Button
-                      href={project.githubLink}
-                      variant="outline"
-                      size="sm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="flex items-center gap-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.335-1.76-1.335-1.76-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.3-.54-1.52.105-3.16 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.64.24 2.86.12 3.16.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.29 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        Code
-                      </span>
-                    </Button>
+                    {project.liveLink && (
+                      <Button
+                        href={project.liveLink}
+                        variant="primary"
+                        size="sm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </Button>
+                    )}
+                    {project.githubLink && (
+                      <Button
+                        href={project.githubLink}
+                        variant="outline"
+                        size="sm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="flex items-center gap-1">
+                          <svg
+                            className="w-4 h-4"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.335-1.76-1.335-1.76-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.3-.54-1.52.105-3.16 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.64.24 2.86.12 3.16.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.29 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                          </svg>
+                          Code
+                        </span>
+                      </Button>
+                    )}
+
+                    {project.githubLinkFrontend &&
+                      project.githubLinkBackend && (
+                        <>
+                          <Button
+                            href={project.githubLinkFrontend}
+                            variant="outline"
+                            size="sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span className="flex items-center gap-1">
+                              <svg
+                                className="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.335-1.76-1.335-1.76-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.3-.54-1.52.105-3.16 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.64.24 2.86.12 3.16.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.29 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                              </svg>
+                              Frontend Code
+                            </span>
+                          </Button>
+                          <Button
+                            href={project.githubLinkBackend}
+                            variant="outline"
+                            size="sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span className="flex items-center gap-1">
+                              <svg
+                                className="w-4 h-4"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.39-1.335-1.76-1.335-1.76-1.09-.746.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.3-.54-1.52.105-3.16 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.64.24 2.86.12 3.16.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.62-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.29 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                              </svg>
+                              Backend Code
+                            </span>
+                          </Button>
+                        </>
+                      )}
                   </div>
                 </div>
               </div>
