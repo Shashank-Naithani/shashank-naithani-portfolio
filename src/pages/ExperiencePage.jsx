@@ -29,6 +29,26 @@ const ExperiencePage = () => {
   const experiences = [
     {
       id: 1,
+      title: "Software Engineer",
+      company: "OneShopAI",
+      location: "Noida",
+      period: "March, 2026 - May, 2026",
+      description: [
+        "Architected and shipped scalable full-stack features using Next.js, Node.js, TypeScript, PostgreSQL, and Prisma",
+        "Engineered secure multi-provider SSO authentication with JWT token rotation and role-based access control (RBAC)",
+        "Optimized PostgreSQL queries and backend APIs through indexing and efficient ORM query design for improved scalability",
+        "Collaborated in production-grade development workflows following modular architecture and clean coding practices",
+      ],
+      technologies: [
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+      ],
+    },
+    {
+      id: 2,
       title: "Frontend Developer Intern",
       company: "Corizo",
       location: "Remote / New Delhi",
@@ -42,7 +62,7 @@ const ExperiencePage = () => {
       technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     },
     {
-      id: 2,
+      id: 3,
       title: "Full Stack Developer Intern",
       company: "PairBytes Software",
       location: "Remote / New Delhi",

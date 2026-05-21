@@ -30,7 +30,7 @@ const Skills = () => {
     {
       name: "Programming Languages",
       icon: "💻",
-      skills: ["JavaScript (ES6+)", "Python"],
+      skills: ["JavaScript (ES6+)", "TypeScript", "Python"],
     },
     {
       name: "Frontend",
@@ -38,6 +38,7 @@ const Skills = () => {
       skills: [
         "React.js",
         "Redux Toolkit",
+        "TanStack Query",
         "Tailwind CSS",
         "Bootstrap",
         "HTML",
@@ -59,12 +60,12 @@ const Skills = () => {
     {
       name: "Database",
       icon: "🗄️",
-      skills: ["MongoDB", "MySQL", "Firebase Firestore"],
+      skills: ["MongoDB", "PostgreSQL", "Firebase Firestore"],
     },
     {
-      name: "Tools",
+      name: "Tools & Cloud",
       icon: "🔧",
-      skills: ["Git & GitHub", "Postman", "VS Code"],
+      skills: ["Git", "GitHub", "Postman", "VS Code", "Microsoft Azure Fundamentals"],
     },
     // {
     //   name: "Tools & DevOps",
